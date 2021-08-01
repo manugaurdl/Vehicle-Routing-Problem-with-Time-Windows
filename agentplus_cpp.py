@@ -115,3 +115,16 @@ g_idle_vehicle_benefit = -10
 
 g_activity_node_flag
 
+def g_add_new_node_origin( passenger_id, beginning_time = -1,end_time = -1):
+
+    new_node_number = g_number_of_nodes + 1
+    g_outbound_node_size[new_node_number] = 0
+    g_inbound_node_size[new_node_number] = 0
+    g_node_passenger_id[new_node_number] = passenger_id
+    g_activity_node_flag[new_node_number] = 1
+    g_activity_node_starting_time[new_node_number] = beginning_time
+    g_activity_node_ending_time[new_node_number] = end_time
+    g_node_type[new_node_number] = 1
+
+    g_number_of_nodes +=1
+    return g_number_of_nodes
